@@ -7,29 +7,39 @@
   <title>Trabalho de Graduação</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
 </head>
 
 <body>
   <div class="container">
     <h1 class="h1 display-6" align="center">Criterios de avaliação do trabalho de graduação.</h1>
       <div class="mb-3">
-        <label for="field1" class="form-label">Nome do Aluno:</label>
-        <input type="text" id="field1" name="field1" class="form-control" required>
+        <label for="nomeAluno" class="form-label">Nome do Aluno:</label>
+        <input type="text" id="nomeAluno" class="form-control" required>
       </div>
 
       <div class="mb-3">
-        <label for="field2">Nome do Professor(a):</label>
-        <input type="text" id="field2" name="field2" class="form-control" required>
+        <label for="nomeProfessor">Nome do Professor(a):</label>
+        <input type="text" id="nomeProfessor" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <Label> Qual semestre do ano?</Label><br>
+        <select name=" semestre" class="form-select" id="semestre" required>
+        <option value="1° SEMESTRE">1° semestre</option>
+        <option value="2° SEMESTRE">2° semestre</option>
+    </select>
       </div>
 
       <div class="mb-3">
         <label for="data">Data:</label>
-        <input type="date" class="form-control">
+        <input type="date" class="form-control" id="data" required>
       </div>
 
       <div class="mb-3">
         <label for="time">Hora:</label>
-        <input type="time" class="form-control">
+        <input type="time" class="form-control" id="hora" required>
       </div>
     </div>
 
@@ -43,7 +53,7 @@
                           <td>Conteúdo da Apresentação</th>
                           <td>Nota</th>
                           <td>
-                            <input type="text" class="form-control" placeholder="Máx 1,0">
+                            <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="conteudoApresentacao" onblur="verificarValor(this)" required>
                           </td>
                       </tr>
                   </thead>
@@ -52,20 +62,20 @@
                           <td>Domínio dos Recursos Didáticos</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control" placeholder="Máx 1,0">
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="dominio" onblur="verificarValor(this)" required>
                           </td>
                       </tr>
                       <tr>
                           <td>Utilização do Tempo e Poder de Síntese</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control" placeholder="Máx 1,0">
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="poderSintese" onblur="verificarValor(this)" required>
                           </td>
                       </tr>
                       <tr>
                           <td class="text-danger">SUB-TOTAL (até 3,0)</td>
                           <td>Nota</td>
-                          <td></td>
+                          <td><input type="text" class="form-control" placeholder="Resultado" id="subT3" readonly></td>
                       </tr>
                   </tbody>
               </table>
@@ -81,7 +91,7 @@
                           <td>Estrutura do Trabalho</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control" placeholder="Máx 1,0">
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="estrutura" onblur="verificarValor(this)" required>
                           </td>
                       </tr>
                   </thead>
@@ -90,32 +100,32 @@
                           <td>Relevância, Originalidade e Qualidade do Conteúdo do Texto</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control" placeholder="Máx 3,0">
+                              <input type="text" class="form-control nota-input" placeholder="Máx 3,0" id="relOriQual" onblur="verificarValor3(this)" required>
                           </td>
                       </tr>
                       <tr>
                           <td>Grau de Conhecimento Demonstrado no Trabalho Escrito</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control" placeholder="Máx 2,0">
+                              <input type="text" class="form-control nota-input" placeholder="Máx 2,0" id="conhecimento" onblur="verificarValor2(this)" required> 
                           </td>
                       </tr>
                       <tr>
                           <td>Adequação da Bibliografia Apresentada</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control" placeholder="Máx 1,0">
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="adequacao" onblur="verificarValor(this)" required>
                           </td>
                       </tr>
                       <tr>
                           <td class="text-danger">SUB-TOTAL (até 7,0)</td>
                           <td>Nota</td>
-                          <td></td>
+                          <td><input type="text" class="form-control" placeholder="Resultado" id="subT7" readonly></td>
                       </tr>
                       <tr>
                           <td class="text-danger">TOTAL (até 10,0)</td>
                           <td>Nota</td>
-                          <td></td>
+                          <td><input type="text" class="form-control" placeholder="Resultado" id="total" readonly></td>
                       </tr>
                   </tbody>
               </table>
@@ -123,7 +133,7 @@
       </div>
         <div>
           <label class="form-check-label" for="flexRadioDefault1">O aluno deverá realizar alterações no Relatório Escrito?</label><br>
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" >
           <label class="form-check-label" for="flexRadioDefault1">Sim</label><br>
           <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
           <label class="form-check-label" for="flexRadioDefault2">Não</label>
@@ -134,7 +144,7 @@
     <div class="container">
       <p><strong>Observação:</strong></p>
         <label for="data">1 - Data Final para entregar a cópia definitiva do Trabalho de Graduação:</label>
-        <input type="date" class="form-control">
+        <input type="date" class="form-control" id="dataFim" required>
         <p><strong>2 - Caso a versão definitiva do Relatório Escrito não seja entregue no prazo, o aluno será considerado REPROVADO na disciplina.</strong></p>
     </div>
     
@@ -154,6 +164,7 @@
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="calculaNotas.js"></script>
   <script src="geradorPdf.js"></script>
   <script src="assinatura.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

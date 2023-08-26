@@ -1,21 +1,72 @@
 document.getElementById("generatePdfBtn").addEventListener("click", function () {
-    const field1Value = document.getElementById("field1").value;
-    const field2Value = document.getElementById("field2").value;
-
     // Create a new jsPDF instance
     const doc = new jspdf.jsPDF();
 
-    // Set the font size and position to start adding content
-    const fontSize = 12;
-    let positionY = 20;
+    const nomeAlunoValue = document.getElementById("nomeAluno").value;
+    const nomeProfessorValue = document.getElementById("nomeProfessor").value;
+    const dataValue = document.getElementById("data").value;
+    const horaValue = document.getElementById("hora").value;
+    const semestreValue = document.getElementById("semestre").value;
+    const dataAtual = new Date();
+    const anoAtual = dataAtual.getFullYear();
 
-    // Add content to the PDF
-    doc.setFontSize(fontSize);
-    doc.text(20, positionY, "Field 1:");
-    doc.text(70, positionY, field1Value);
-    positionY += 20;
-    doc.text(20, positionY, "Field 2:");
-    doc.text(70, positionY, field2Value);
+    const conteudoApresentacao = document.getElementById("conteudoApresentacao").value;
+    const dominio = document.getElementById("dominio").value;
+    const poderSintese = document.getElementById("poderSintese").value;
+
+    const estrutura = document.getElementById("estrutura").value;
+    const relOriQual = document.getElementById("relOriQual").value;
+    const conhecimento = document.getElementById("conhecimento").value;
+    const adequacao = document.getElementById("adequacao").value;
+
+    const dataFim = document.getElementById("dataFim").value;
+  
+
+    // Set the font size and position to start adding content
+    // const fontSize = 12;
+    // let positionY = 20;
+
+    // // // Add content to the PDF
+    // // doc.setFontSize(fontSize);
+    // // doc.text(20, positionY, "Aluno:");
+    // // doc.text(70, positionY, nomeAlunoValue);
+    // // positionY += 20;
+    // // doc.text(20, positionY, "Professor:");
+    // // doc.text(70, positionY, nomeProfessorValue);
+
+    const conteudoPDF = `
+      Aluno: ${nomeAlunoValue} 
+      Professor: ${nomeProfessorValue}
+      Data: ${dataValue}
+      Hora: ${horaValue}
+      `;
+
+    const notas = `
+      Conteúdo da Apresentação: ${conteudoApresentacao}
+      Domínio dos Recursos Didáticos: ${dominio}
+      Utilização do Tempo e Poder de Síntese: ${poderSintese}
+      `;
+
+      const notas1 = `
+      Estrutura do Trabalho: ${estrutura}
+      Relevância, Originalidade e Qualidade do Conteúdo do Texto: ${relOriQual}
+      Grau de Conhecimento Demonstrado no Trabalho Escrito: ${conhecimento}
+      Adequação da Bibliografia Apresentada: ${adequacao}
+      `;
+
+      const adicionais = `
+      Data Final para entregar a 
+      cópia definitiva do Trabalho de Graduação: ${dataFim}
+      `;
+
+    // Adicione o conteúdo ao PDF
+    doc.text(conteudoPDF, 10, 30, 0, );
+    doc.text(notas, 10, 60, 0);
+    doc.text(notas1, 10, 90, 0);
+    doc.text(adicionais, 10, 120, 0);
+
+    doc.setFontSize(12);
+    doc.text('CRITÉRIOS DE AVALIAÇÃO DO TRABALHO DE GRADUAÇÃO DO ' + semestreValue+ ' DE ' +anoAtual, 18, 18, 0)
 
 
     const canvas = document.getElementById("assinaturaCanvas");
