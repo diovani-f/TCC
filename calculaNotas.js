@@ -10,6 +10,8 @@ function verificarValor(input) {
         // Mostre um alerta na tela
         alert('O valor inserido é maior que 1. O campo foi zerado.');
     }
+    calcularSubTotal3()
+    calcularSubTotal7()
 }
 function verificarValor2(input) {
     // Obtenha o valor do campo de entrada
@@ -23,6 +25,8 @@ function verificarValor2(input) {
         // Mostre um alerta na tela
         alert('O valor inserido é maior que 2. O campo foi zerado.');
     }
+    calcularSubTotal3()
+    calcularSubTotal7()
 }
 function verificarValor3(input) {
     // Obtenha o valor do campo de entrada
@@ -36,6 +40,8 @@ function verificarValor3(input) {
         // Mostre um alerta na tela
         alert('O valor inserido é maior que 3. O campo foi zerado.');
     }
+    calcularSubTotal3()
+    calcularSubTotal7()
 }
 
 $(document).ready(function() {
@@ -50,6 +56,7 @@ $(document).ready(function() {
       allowZero: true, // Permitir 0.00
       allowNegative: false // Não permitir números negativos
     });
+
 }
 
 function calcularSubTotal3() {

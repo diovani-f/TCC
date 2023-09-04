@@ -20,6 +20,15 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
     const adequacao = document.getElementById("adequacao").value;
 
     const dataFim = document.getElementById("dataFim").value;
+
+    const radios = document.getElementsByName("alterar");
+    const selected = Array.from(radios).find(radio => radio.checked);
+
+
+
+
+    doc.setFontSize(12);
+
   
 
     // Set the font size and position to start adding content
@@ -55,6 +64,7 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
       `;
 
       const adicionais = `
+      O aluno deverá realizar alterações no Relatório Escrito? ${selected.value}
       Data Final para entregar a 
       cópia definitiva do Trabalho de Graduação: ${dataFim}
       `;
@@ -64,14 +74,15 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
     doc.text(notas, 10, 60, 0);
     doc.text(notas1, 10, 90, 0);
     doc.text(adicionais, 10, 120, 0);
+    
 
-    doc.setFontSize(12);
     doc.text('CRITÉRIOS DE AVALIAÇÃO DO TRABALHO DE GRADUAÇÃO DO ' + semestreValue+ ' DE ' +anoAtual, 18, 18, 0)
 
 
     const canvas = document.getElementById("assinaturaCanvas");
     const imageData = canvas.toDataURL("image/png");
-    doc.addImage(imageData, "PNG", 20, 100, 150, 50); // (image data, format, x, y, width, height)
+    doc.addImage(imageData, "PNG", 20, 130, 150, 50); // (image data, format, x, y, width, height)
+
 
     // Save the PDF
     doc.save("filled_form.pdf");
