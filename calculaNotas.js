@@ -1,43 +1,31 @@
 function verificarValor(input) {
-    // Obtenha o valor do campo de entrada
     var valor = parseFloat(input.value);
 
-    // Verifique se o valor é maior que 1
     if (valor > 1) {
-        // Zere o campo de entrada
         input.value = '';
 
-        // Mostre um alerta na tela
         alert('O valor inserido é maior que 1. O campo foi zerado.');
     }
     calcularSubTotal3()
     calcularSubTotal7()
 }
 function verificarValor2(input) {
-    // Obtenha o valor do campo de entrada
     var valor = parseFloat(input.value);
 
-    // Verifique se o valor é maior que 1
     if (valor > 2) {
-        // Zere o campo de entrada
         input.value = '';
 
-        // Mostre um alerta na tela
         alert('O valor inserido é maior que 2. O campo foi zerado.');
     }
     calcularSubTotal3()
     calcularSubTotal7()
 }
 function verificarValor3(input) {
-    // Obtenha o valor do campo de entrada
     var valor = parseFloat(input.value);
 
-    // Verifique se o valor é maior que 1
     if (valor > 3) {
-        // Zere o campo de entrada
         input.value = '';
 
-        // Mostre um alerta na tela
         alert('O valor inserido é maior que 3. O campo foi zerado.');
     }
     calcularSubTotal3()
