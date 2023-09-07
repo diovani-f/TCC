@@ -16,17 +16,17 @@
     <h1 class="h1 display-6" align="center">Criterios de avaliação do trabalho de graduação.</h1>
       <div class="mb-3">
         <label for="nomeAluno" class="form-label">Nome do Aluno:</label>
-        <input type="text" id="nomeAluno" class="form-control" required>
+        <input type="text" id="nomeAluno" class="form-control">
       </div>
 
       <div class="mb-3">
         <label for="nomeProfessor">Nome do Professor(a):</label>
-        <input type="text" id="nomeProfessor" class="form-control" required>
+        <input type="text" id="nomeProfessor" class="form-control">
       </div>
 
       <div class="mb-3">
         <Label> Qual semestre do ano?</Label><br>
-        <select name=" semestre" class="form-select" id="semestre" required>
+        <select name=" semestre" class="form-select" id="semestre">
         <option value="1° SEMESTRE">1° semestre</option>
         <option value="2° SEMESTRE">2° semestre</option>
     </select>
@@ -34,12 +34,12 @@
 
       <div class="mb-3">
         <label for="data">Data:</label>
-        <input type="date" class="form-control" id="data" required>
+        <input type="date" class="form-control" id="data">
       </div>
 
       <div class="mb-3">
         <label for="time">Hora:</label>
-        <input type="time" class="form-control" id="hora" required>
+        <input type="time" class="form-control" id="hora">
       </div>
     </div>
 
@@ -53,7 +53,7 @@
                           <td>Conteúdo da Apresentação</th>
                           <td>Nota</th>
                           <td>
-                            <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="conteudoApresentacao" onblur="verificarValor(this)" required>
+                            <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="conteudoApresentacao" onblur="verificarValor(this)">
                           </td>
                       </tr>
                   </thead>
@@ -62,14 +62,14 @@
                           <td>Domínio dos Recursos Didáticos</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="dominio" onblur="verificarValor(this)" required>
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="dominio" onblur="verificarValor(this)">
                           </td>
                       </tr>
                       <tr>
                           <td>Utilização do Tempo e Poder de Síntese</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="poderSintese" onblur="verificarValor(this)" required>
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="poderSintese" onblur="verificarValor(this)">
                           </td>
                       </tr>
                       <tr>
@@ -91,7 +91,7 @@
                           <td>Estrutura do Trabalho</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="estrutura" onblur="verificarValor(this)" required>
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="estrutura" onblur="verificarValor(this)">
                           </td>
                       </tr>
                   </thead>
@@ -100,21 +100,21 @@
                           <td>Relevância, Originalidade e Qualidade do Conteúdo do Texto</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control nota-input" placeholder="Máx 3,0" id="relOriQual" onblur="verificarValor3(this)" required>
+                              <input type="text" class="form-control nota-input" placeholder="Máx 3,0" id="relOriQual" onblur="verificarValor3(this)">
                           </td>
                       </tr>
                       <tr>
                           <td>Grau de Conhecimento Demonstrado no Trabalho Escrito</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control nota-input" placeholder="Máx 2,0" id="conhecimento" onblur="verificarValor2(this)" required> 
+                              <input type="text" class="form-control nota-input" placeholder="Máx 2,0" id="conhecimento" onblur="verificarValor2(this)"> 
                           </td>
                       </tr>
                       <tr>
                           <td>Adequação da Bibliografia Apresentada</td>
                           <td>Nota</td>
                           <td>
-                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="adequacao" onblur="verificarValor(this)" required>
+                              <input type="text" class="form-control nota-input" placeholder="Máx 1,0" id="adequacao" onblur="verificarValor(this)">
                           </td>
                       </tr>
                       <tr>
@@ -144,7 +144,7 @@
     <div class="container">
       <p><strong>Observação:</strong></p>
         <label for="data">1 - Data Final para entregar a cópia definitiva do Trabalho de Graduação:</label>
-        <input type="date" class="form-control" id="dataFim" required>
+        <input type="date" class="form-control" id="dataFim">
         <p><strong>2 - Caso a versão definitiva do Relatório Escrito não seja entregue no prazo, o aluno será considerado REPROVADO na disciplina.</strong></p>
     </div>
     
@@ -158,10 +158,6 @@
           <button class="btn btn-primary" type="button" id="generatePdfBtn">Gerar PDF</button>
       </div>
   </div>
-  
-  
-  
-  
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="calculaNotas.js"></script>

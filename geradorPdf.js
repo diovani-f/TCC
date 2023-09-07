@@ -25,6 +25,12 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
     const selected = Array.from(radios).find(radio => radio.checked);
 
 
+    if (nomeAlunoValue === "" || nomeProfessorValue === "" || dataValue === "" ||horaValue === "" ||semestreValue === "" ||conteudoApresentacao === "" ||dominio === "" ||poderSintese === "" ||estrutura === "" ||relOriQual === "" ||conhecimento === "" ||adequacao === "" ||dataFim === "" || !selected) {
+      alert("Por favor, preencha todos os campos.");
+      return false;
+    }
+
+
 
 
     doc.setFontSize(12);
@@ -65,8 +71,8 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
 
       const adicionais = `
       O aluno deverá realizar alterações no Relatório Escrito? ${selected.value}
-      Data Final para entregar a 
-      cópia definitiva do Trabalho de Graduação: ${dataFim}
+      Data Final para entregar a cópia definitiva 
+      do Trabalho de Graduação: ${dataFim}
       `;
 
     // Adicione o conteúdo ao PDF
@@ -81,7 +87,7 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
 
     const canvas = document.getElementById("assinaturaCanvas");
     const imageData = canvas.toDataURL("image/png");
-    doc.addImage(imageData, "PNG", 20, 130, 150, 50); // (image data, format, x, y, width, height)
+    doc.addImage(imageData, "PNG", 20, 140, 150, 50); // (image data, format, x, y, width, height)
 
 
     // Save the PDF
