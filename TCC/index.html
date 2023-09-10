@@ -12,37 +12,38 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="h1 display-6" align="center">Criterios de avaliação do trabalho de graduação.</h1>
-      <div class="mb-3">
-        <label for="nomeAluno" class="form-label">Nome do Aluno:</label>
-        <input type="text" id="nomeAluno" class="form-control">
-      </div>
+    <form>
+        <div class="container">
+            <h1 class="h1 display-6" align="center">Criterios de avaliação do trabalho de graduação.</h1>
+            <div class="mb-3">
+                <label for="nomeAluno" class="form-label">Nome do Aluno:</label>
+                <input type="text" id="nomeAluno" class="form-control">
+            </div>
 
-      <div class="mb-3">
-        <label for="nomeProfessor">Nome do Professor(a):</label>
-        <input type="text" id="nomeProfessor" class="form-control">
-      </div>
+            <div class="mb-3">
+                <label for="nomeProfessor">Nome do Avaliador(a):</label>
+                <input type="text" id="nomeAvaliador" class="form-control">
+            </div>
 
-      <div class="mb-3">
-        <Label> Qual semestre do ano?</Label><br>
-        <select name=" semestre" class="form-select" id="semestre">
-        <option value="1° SEMESTRE">1° semestre</option>
-        <option value="2° SEMESTRE">2° semestre</option>
-    </select>
-      </div>
+            <div class="mb-3">
+                <Label> Qual semestre do ano?</Label><br>
+                <select name=" semestre" class="form-select" id="semestre">
+                <option value="1° SEMESTRE">1° semestre</option>
+                <option value="2° SEMESTRE">2° semestre</option>
+            </select>
+            </div>
 
-      <div class="mb-3">
-        <label for="data">Data:</label>
-        <input type="date" class="form-control" id="data">
-      </div>
+            <div class="mb-3">
+                <label for="data">Data:</label>
+                <input type="date" class="form-control" id="data">
+            </div>
 
-      <div class="mb-3">
-        <label for="time">Hora:</label>
-        <input type="time" class="form-control" id="hora">
-      </div>
-    </div>
-
+            <div class="mb-3">
+                <label for="time">Hora:</label>
+                <input type="time" class="form-control" id="hora">
+            </div>
+        </div>
+    </form>
     <div class="container">
       <div class="row">
           <div class="col-md-12">
@@ -156,10 +157,12 @@
       <div class="mt-3">
           <button class="btn btn-danger" onclick="limparAssinatura()">Limpar</button>
           <button class="btn btn-primary" type="button" id="generatePdfBtn">Gerar PDF</button>
+          <button class="btn btn-primary" type="button" id="gerarLink">Gerar link de compartilhamento</button>
       </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="gerarLink.js"></script>
   <script src="calculaNotas.js"></script>
   <script src="geradorPdf.js"></script>
   <script src="assinatura.js"></script>
