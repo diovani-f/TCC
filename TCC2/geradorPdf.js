@@ -17,8 +17,8 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
   const nomeProfessor = document.getElementById("nomeProfessor").value;
   const dataValue = document.getElementById("data").value;
   const hora = document.getElementById("hora").value;
-  const NomeAvaliador1 = document.getElementById("NomeAvaliador1").value;
-  const NomeAvaliador2 = document.getElementById("NomeAvaliador2").value;
+  const nomeAvaliador1 = document.getElementById("nomeAvaliador1").value;
+  const nomeAvaliador2 = document.getElementById("nomeAvaliador2").value;
   const curso = document.getElementById("curso").value;
   const notaFinal = document.getElementById("notaFinal").value;
   const dataFim = document.getElementById("dataFim").value;
@@ -41,7 +41,7 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
   const imgAl = assinaturaAl.toDataURL("image/png");
   //
 
-  if (nomeAluno === "" || nomeProfessor === "" || dataValue === "" ||hora === "" ||NomeAvaliador1 === "" ||NomeAvaliador2 === "" ||curso === "" ||notaFinal === "" ||dataFim === "" ||sala === "" ||titulo === "" || assinaturaAl == null) {
+  if (nomeAluno === "" || nomeProfessor === "" || dataValue === "" ||hora === "" ||nomeAvaliador1 === "" ||nomeAvaliador2 === "" ||curso === "" ||notaFinal === "" ||dataFim === "" ||sala === "" ||titulo === "" || assinaturaAl == null) {
     alert("Por favor, preencha todos os campos.");
     return false;
   }
@@ -68,7 +68,7 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
 
   const Texto = `
     Aos ${dia} dias do mês de ${mesExt} de ${ano} às ${hora}, na sala ${sala}, realizou-se o Exame da Defesa do Trabalho de Conclusão de Curso intitulado: ${titulo}, de autoria de ${nomeAluno}, acadêmico (a) do Curso de Graduação em ${curso} da UFSM.
-    A Banca Examinadora esteve constituída por ${nomeProfessor}, professor(a) orientador(a) do Trabalho de Conclusão de Curso, e por ${NomeAvaliador1} e  ${NomeAvaliador2}, membros avaliadores. O(a) acadêmico(a) recebeu a nota final ${notaFinal}. Foi concedido até a data de ${diaF} do mês de ${mesExtF} de ${anoF} para o(a) acadêmico(a) realizar as alterações sugeridas pela Banca Examinadora e entregar o trabalho em sua redação definitiva. E para constar foi lavrada a presente Ata, que será assinada pelos membros da Banca Examinadora e pelo(a) acadêmico(a).
+    A Banca Examinadora esteve constituída por ${nomeProfessor}, professor(a) orientador(a) do Trabalho de Conclusão de Curso, e por ${nomeAvaliador1} e  ${nomeAvaliador2}, membros avaliadores. O(a) acadêmico(a) recebeu a nota final ${notaFinal}. Foi concedido até a data de ${diaF} do mês de ${mesExtF} de ${anoF} para o(a) acadêmico(a) realizar as alterações sugeridas pela Banca Examinadora e entregar o trabalho em sua redação definitiva. E para constar foi lavrada a presente Ata, que será assinada pelos membros da Banca Examinadora e pelo(a) acadêmico(a).
   `;
 
   const local = `

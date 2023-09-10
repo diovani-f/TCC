@@ -31,13 +31,13 @@
       </div>
 
       <div class="mb-3">
-        <label for="NomeAvaliador1">Nome do Professor(a) Avaliador(a) 1:</label>
-        <input type="text" id="NomeAvaliador1" class="form-control" required>
+        <label for="nomeAvaliador1">Nome do Professor(a) Avaliador(a) 1:</label>
+        <input type="text" id="nomeAvaliador1" class="form-control" required>
       </div>
 
       <div class="mb-3">
-        <label for="NomeAvaliador2">Nome do Professor(a) Avaliador(a) 2:</label>
-        <input type="text" id="NomeAvaliador2" class="form-control" required>
+        <label for="nomeAvaliador2">Nome do Professor(a) Avaliador(a) 2:</label>
+        <input type="text" id="nomeAvaliador2" class="form-control" required>
       </div>
 
       <div class="mb-3">
@@ -110,16 +110,14 @@
       <br>
       <button class="btn btn-danger" onclick="limparAssinatura('assinaturaAl')">Limpar</button>
   </div>
-  
-
-
-
       <div class="container text-center">
           <button class="btn btn-primary" type="button" id="generatePdfBtn">Gerar PDF</button>
+          <button class="btn btn-primary" type="button" id="gerarLink">Gerar link de compartilhamento</button>
       </div>
   </div>
   
 
+  <script src="gerarLink.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="geradorPdf.js"></script>
   <script src="assinatura.js"></script>
