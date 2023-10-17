@@ -10,11 +10,9 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
 
   const nomeAlunoValue = document.getElementById("nomeAluno").value;
   const nomeProfessorValue = document.getElementById("nomeAvaliador").value;
-  const dataValue = document.getElementById("data").value;
+  var dataValue = document.getElementById("data").value;
   const horaValue = document.getElementById("hora").value;
   const semestreValue = document.getElementById("semestre").value;
-  const dataAtual = new Date();
-  const anoAtual = dataAtual.getFullYear();
 
   const conteudoApresentacao = document.getElementById("conteudoApresentacao").value;
   const dominio = document.getElementById("dominio").value;
@@ -38,6 +36,11 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
     alert("Por favor, preencha todos os campos.");
     return false;
   }
+  
+
+  y=106
+  dataFim = formatarData(dataFim)
+  dataValue = formatarData(dataValue)
 
   const conteudoPDF = `
     Aluno: ${nomeAlunoValue} 
@@ -49,7 +52,6 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
 
   // Adicione o conteúdo ao PDF
   doc.text(conteudoPDF, 27, 60, 0);
-  y=106
 
   doc.text(conteudoApresentacao, 166, y, 0, );
   doc.text(dominio, 166, y+=7, 0, );
@@ -63,18 +65,9 @@ document.getElementById("generatePdfBtn").addEventListener("click", function () 
   doc.text(subT7, 166, y+=8, 0, );
   doc.text(total, 166, y+=8, 0, );
 
-
   doc.text(`O aluno deverá realizar alterações no relatório escrito? ${selected.value}.`, 32, 190, 0);
 
-
-  dataFim = formatarData(dataFim)
-
-  console.log(dataFim);
   doc.text(dataFim, 146, 237.5, 0);
-
-  
-
-  // doc.text('CRITÉRIOS DE AVALIAÇÃO DO TRABALHO DE GRADUAÇÃO DO ' + semestreValue+ ' DE ' +anoAtual, 18, 18, 0)
 
 
   const canvas = document.getElementById("assinaturaCanvas");
