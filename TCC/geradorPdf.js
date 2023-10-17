@@ -1,8 +1,10 @@
 document.getElementById("generatePdfBtn").addEventListener("click", function () {
   // Create a new jsPDF instance
   const doc = new jspdf.jsPDF();
-  
+
+  doc.setFont('arial');
   doc.setFontSize(12);
+  
   var img = 'cedula.jpg'
   var width = doc.internal.pageSize.getWidth();
   var height = doc.internal.pageSize.getHeight();
